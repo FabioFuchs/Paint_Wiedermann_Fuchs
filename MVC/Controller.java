@@ -1,14 +1,16 @@
 package MVC;
 
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Controller implements ActionListener {
     private Model m;
-    private View v;
+    private Panel p;
 
     public Controller() {
         this.m = new Model();
-        this.v = new View(this, this.m);
+        this.p = new Panel(this, this.m);
+
     }
 
     @Override
@@ -19,6 +21,6 @@ public class Controller implements ActionListener {
     public static void main(String[] args) {
         Controller c = new Controller();
     }
+
+
 }
-
-
