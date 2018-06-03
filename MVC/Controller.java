@@ -3,12 +3,12 @@ package MVC;
 import java.awt.event.*;
 
 public class Controller implements ActionListener {
-    private Panel p;
-    private Frame frame;
+    private Model m;
+    private View v;
 
     public Controller() {
-        this.p = p;
-        this.frame = frame;
+        this.m = new Model();
+        this.v = new View(this, this.m);
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Controller implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new Controller();
+        Controller c = new Controller();
     }
 }
 
