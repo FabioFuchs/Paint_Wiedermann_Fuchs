@@ -20,29 +20,40 @@ public interface Element  {
 	 * @param g Grafics-Kontext
 	 */
 	public void draw(Graphics g);
+	
+	
 	/**
-	 * Erzeugt eine Kopie vom eigenen Objekt
+	 * Erzeugt eine Kopie vom eigenen Objekt in die Home-Position
 	 */
 	public abstract Element clone();
+	
+	
 	/**
 	 * Einen neuen Punkt hinzufügen<br>
 	 * Einige Zeichenmethoden benoetigen mehrere Punkte:<br>
 	 * z.b.: Freihand, Line (Start- und Endpunkt),...
 	 * wird auch fuer die Methode setHomePosition benoetigt
 	 * 
+	 * Jedes Objekt sollte ein Polygon im Hintergrund haben
+	 * 
 	 * @param x x-Koordinate
 	 * @param y y-Koordinate
 	 */
 	public void addPoint(int x, int y);
+	
+	
 	/**
 	 * entfernt den letzten Punkt
 	 */
 	public void removeLastPoint();
 	
+	
 	/**
 	 * Element wird auf Position (0/0) gesetzt
+	 * p.getBounds -> p.translate(-r.x, -r.y)
 	 */
 	public void setHomePosition();
+	
 	
 	/**
 	 * Gibt die aktuelle Farbe (Vordergrund) zurueck
@@ -50,10 +61,11 @@ public interface Element  {
 	 */
 	public Color getColor();
 	
+	
 	/**
 	 * Setzt die Farbe des Vordergrundes
 	 * @param c the c to set
 	 */
-	public void setColor(Color c) ;
-	
+	public void setColor(Color c);
+
 }
